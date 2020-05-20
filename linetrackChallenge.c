@@ -83,7 +83,6 @@ task main()
   	case 1: state = 1; break;
   	case 2: state = 3; break;
   	case 3: state = 5; break;
-  	case 4: state = 5; break;
   	default: state = 0; break;
   	}
 
