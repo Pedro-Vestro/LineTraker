@@ -24,6 +24,7 @@ task MotorTask()
 }
 
 
+setMotorSync(nMotorOne, nMotorTwo, nTurnRatio, nSignedPower);
 
 
 task DisplayTask()
@@ -44,7 +45,7 @@ task DisplayTask()
 task ColorReflected{
 	while(1){
 		CR = getColorReflected(colorSensor);
-		sleep(50);// 20Hz = 1000/20
+		sleep(10);// 20Hz = 1000/20
 	}
 }
 
@@ -75,7 +76,7 @@ task main()
   	else if(fase2time >= time1[T1] && CR < threshold)
   		fase = 2;																			//follow the line along the left  side
   	else if(fase3time >= time1[T1] && CR < threshold)
-  		fase = 3;																			//follow the line along the left side slowly
+  		fase = 3;																			//follow the line along the right side slowly
 
 
   	switch(fase)
@@ -126,9 +127,9 @@ task main()
     	case 4:
     		Lspeed = 55; Rspeed = 15; break;
     	case 5:
-    		Lspeed = 5; Rspeed = 30; break;
+    		Lspeed = 10; Rspeed = 30; break;
     	case 6:
-    			Lspeed = 30; Rspeed = 5; break;
+    		Lspeed = 30; Rspeed = 10; break;
     }
 
   }
